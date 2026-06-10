@@ -1,4 +1,3 @@
--- Bootstrap lazy.nvim
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -44,9 +43,9 @@ local plugins ={
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim",         -- Required
-      "sindrets/diffview.nvim",        -- Optional - Adds great diff views
-      "nvim-telescope/telescope.nvim", -- Optional
+      "nvim-lua/plenary.nvim",        
+      "sindrets/diffview.nvim",        
+      "nvim-telescope/telescope.nvim", 
     },
     config = function()
       require("neogit").setup({
@@ -54,17 +53,15 @@ local plugins ={
       })
     end
   },
-  -- Add this inside your local plugins = { ... } table
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- Requires a Nerd Font installed on your system for icons
+      "nvim-tree/nvim-web-devicons", 
       "MunifTanjim/nui.nvim",
     },
     config = function()
-      -- Optional: Map it to a quick shortcut like Ctrl + n
       vim.keymap.set('n', '<C-n>', ':Neotree toggle left<CR>', { silent = true })
     end
   }
