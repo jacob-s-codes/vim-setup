@@ -7,8 +7,12 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {desc = 'Exit terminal mode'})
 vim.keymap.set('n', '<F5>', ":w<CR>:!python3 '%'<CR>", { desc = 'Run Python file' })
+vim.keymap.set('n', '<leader>t', ':vs | term<CR>', {silent = true})
+vim.keymap.set('n', '<leader>q', ':q<CR>', {silent = true})
 vim.keymap.set('n', '<leader>t', function()
   vim.cmd("split | term")
   vim.cmd("resize 15")
